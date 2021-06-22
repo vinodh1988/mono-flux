@@ -20,4 +20,32 @@ public class MonoProvider {
 		   return Mono.error(new Exception("Things are not going good"));
 	   }
    }
+   
+  public static Mono<String> delayed(){
+	  
+	  Mono<String> mono= Mono.defer(
+			  ()->{
+	              try
+	                {
+		             
+	                  Thread.sleep(3000);
+	                  return Mono.just("Processed information and this runs late");
+	                }
+	              catch(InterruptedException e) {
+	            	  return Mono.error(e);
+	              }
+			  });
+	  return mono;
+  }
+  
+  public static Mono<String> callThis(){
+	   Mono<String> mono = Mono.create(
+			     x -> {
+			    	 System.out.println("Running async logic");
+			    	 x.success("DONE ---> This is the processed information");
+			     }
+			   );
+	   
+	   return mono;
+  }
 }
