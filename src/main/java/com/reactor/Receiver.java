@@ -5,11 +5,11 @@ import reactor.core.publisher.Mono;
 public class Receiver {
    public static void main(String n[]) {
 	  //Mono<String> mono=MonoProvider.getResult((int)Math.round(Math.random()*10000));
-	   Mono<String> mono = MonoProvider.callThis(); 
+	   //Mono<String> mono = MonoProvider.callThis(); 
 			   
 			   //MonoProvider.delayed();
 	   
-	   mono.subscribe(
+	  /* mono.subscribe(
 			      ConsumerHelper.onNext(),
 			      ConsumerHelper.onError(),
 			      ConsumerHelper.onCompletion()
