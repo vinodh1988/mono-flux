@@ -1,5 +1,6 @@
 package com.reactor;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ConsumerHelper {
@@ -14,4 +15,10 @@ public class ConsumerHelper {
    public static Runnable onCompletion() {
 	   return ()->System.out.println("Process Completed");
    }
+   
+   public static Consumer<String> onNext2() {
+	 
+	   return (x)->System.out.println("Super Processing "+x);
+   }
+  
 }
