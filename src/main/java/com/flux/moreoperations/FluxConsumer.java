@@ -5,6 +5,8 @@ import reactor.core.publisher.Mono;
 
 public class FluxConsumer {
    public static void main(String n[]) {
+	   
+	  //map and flat map difference
 	  Flux<Flux<Integer>> flux= FluxProvider.getMapProcess2();
 	  
 	  flux
